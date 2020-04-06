@@ -1,0 +1,66 @@
+
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>UAP-The one stop shop for all your downloads</title>
+<style type = "text/css">
+
+ .text-centerc{
+  color: white;
+ }
+
+  body, html {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+   }
+
+.bg {
+  /* The image used */
+  background-image: url("../assets/images/headliner.jpg");
+
+  /* Full height */
+  height: 100%;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+  .btn-xlarge {
+    padding: 18px 28px;
+    font-size: 22px; //change this to your desired size
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
+  </style>
+</head>
+<body class="bg">
+<div>
+<a href="../index.html"><h1 class="text-center text-centerc">The Ultimate App Pack</h1></a>
+<h2 class="text-center text-centerc"> Download all your Free Favorite Apps in One Shot </h2>
+<h3 class = "text-center text-centerc" id="hi"> Your Download Should be Starting </h3> 
+<script type="text/javascript">
+function downloadURI(uri, name) {
+  var link = document.createElement("a");
+  link.download = name;
+  link.href = uri;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  delete link;
+}
+downloadURI("UltimateAppPack/UltimateAppPack.zip","UltimateAppPack.zip")
+></script>
+</body>
+</html>

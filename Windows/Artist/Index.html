@@ -24,7 +24,7 @@
 
 .bg {
   /* The image used */
-  background-image: url("../assets/images/headliner.jpg");
+  background-image: url("../../assets/images/headliner.jpg");
 
   /* Full height */
   height: 100%;
@@ -49,25 +49,21 @@
 <div>
 <a href="../index.html"><h1 class="text-center text-centerc">The Ultimate App Pack</h1></a>
 <h2 class="text-center text-centerc"> Download all your Free Favorite Apps in One Shot </h2>
-<h3 class = "text-center text-centerc" id="hi"> Who Are you? </h3> 
+<h3 class = "text-center text-centerc" id="hi"> What Kind of Artist? </h3> 
 </div>
 <div class="col-md-8 col-md-offset-2">
 <div class="btn-toolbar">
-  <button type="button" onclick="set('Dev');" class="btn btn-xlarge btn-primary">Developer</button>
-  <button type="button" onclick="set('Gamer');" class="btn btn-xlarge  btn-primary">Gamer</button>
+  <button type="button" onclick="set('Musical');" class="btn btn-xlarge btn-primary">Musical</button>
+  <button type="button" onclick="set('Visual');" class="btn btn-xlarge  btn-primary">Visual</button>
 </div>
   <div class="btn-toolbar">
-  <button type="button" onclick="set('Ewriter');" class="btn btn-xlarge btn-primary">Ewriter</button>
-  <button type="button" onclick="set('Artist');" class="btn btn-xlarge btn-primary">Artist</button>
-</div>
-<div class="btn-toolbar">
-  <button type="button" onclick="set('PenTester');"  class="btn btn-xlarge btn-primary">PenTester</button>
-  <button type="button" onclick="set('ProdUser');" class="btn btn-xlarge btn-primary">Productive User</button>
+  <button type="button" onclick="set('Film');" class="btn btn-xlarge btn-primary">Film</button>
+  <button type="button" onclick="set('All');" class="btn btn-xlarge btn-primary">All</button>
 </div>
 </div>
 
 <div class="col-md-8 col-md-offset-2 mt-5" >
-<div class="bg-success" id="hello2" style="width: 47%">
+<div class="bg-success" style="width: 47%">
 <h3 class = "text-dark" id="hello"> How often do you use this device? </h3> 
 </div>
 
@@ -77,8 +73,8 @@
   <button type="button" id="freq" onclick="set2('Frequent');" class="btn btn-xlarge  btn-warning">Frequent</button>
 </div>
   <div class="btn-toolbar">
-  <button type="button" id="every" onclick="set2('Everyday');" class="btn btn-xlarge btn-warning">Everyday</button>
-  <button type="button" id="motd" onclick="set2('MOTD');" class="btn btn-xlarge btn-warning">Most of the Day</button>
+  <button type="button" onclick="set2('Everyday');" class="btn btn-xlarge btn-warning">Everyday</button>
+  <button type="button" onclick="set2('MOTD');" class="btn btn-xlarge btn-warning">Most of the Day</button>
 </div>
 </div>
 <div class="container">
@@ -90,31 +86,16 @@
     function set(occi)
     {
       occ = occi;
-      document.getElementById("hi").innerHTML= "You Are a " + occ;
+      document.getElementById("hi").innerHTML= occ + " Artist";
       if(occ=="Dev")
       {
         document.getElementById("wiht").style.visibility = 'hidden';
         document.getElementById("freq").style.visibility = 'hidden';
       }
-      else if(occ=="Artist")
-      {
-        freq=null;
-        document.getElementById("wiht").style.visibility = 'hidden';
-        document.getElementById("freq").style.visibility = 'hidden';
-        document.getElementById("every").style.visibility = 'hidden';
-        document.getElementById("motd").style.visibility = 'hidden';
-        document.getElementById("hello").style.visibility = 'hidden';
-        document.getElementById("hello2").style.visibility = 'hidden';
-      }
       else
       {
-        document.getElementById("hello").innerHTML= "How often do you use this device?";
         document.getElementById("wiht").style.visibility = 'visible';
         document.getElementById("freq").style.visibility = 'visible';
-         document.getElementById("every").style.visibility = 'visible';
-        document.getElementById("motd").style.visibility = 'visible';
-        document.getElementById("hello").style.visibility = 'visible';
-        document.getElementById("hello2").style.visibility = 'visible';
       }
     }
     function set2(freqi)
@@ -127,13 +108,7 @@
     }
     function submit(){
         
-        if(freq!= null)
-        {
           window.location.href=window.location.href+occ+"/" + freq;
-        }
-        else{
-          window.location.href=window.location.href+occ;
-        }
     }
     </script>
 </body>
