@@ -67,7 +67,7 @@
 </div>
 
 <div class="col-md-8 col-md-offset-2 mt-5" >
-<div class="bg-success" style="width: 47%">
+<div class="bg-success" id="hello2" style="width: 47%">
 <h3 class = "text-dark" id="hello"> How often do you use this device? </h3> 
 </div>
 
@@ -98,17 +98,23 @@
       }
       else if(occ=="Artist")
       {
+        freq=null;
         document.getElementById("wiht").style.visibility = 'hidden';
         document.getElementById("freq").style.visibility = 'hidden';
         document.getElementById("every").style.visibility = 'hidden';
         document.getElementById("motd").style.visibility = 'hidden';
+        document.getElementById("hello").style.visibility = 'hidden';
+        document.getElementById("hello2").style.visibility = 'hidden';
       }
       else
       {
+        document.getElementById("hello").innerHTML= "How often do you use this device?";
         document.getElementById("wiht").style.visibility = 'visible';
         document.getElementById("freq").style.visibility = 'visible';
          document.getElementById("every").style.visibility = 'visible';
         document.getElementById("motd").style.visibility = 'visible';
+        document.getElementById("hello").style.visibility = 'visible';
+        document.getElementById("hello2").style.visibility = 'visible';
       }
     }
     function set2(freqi)
