@@ -77,8 +77,8 @@
   <button type="button" id="freq" onclick="set2('Frequent');" class="btn btn-xlarge  btn-warning">Frequent</button>
 </div>
   <div class="btn-toolbar">
-  <button type="button" onclick="set2('Everyday');" class="btn btn-xlarge btn-warning">Everyday</button>
-  <button type="button" onclick="set2('MOTD');" class="btn btn-xlarge btn-warning">Most of the Day</button>
+  <button type="button" id="every" onclick="set2('Everyday');" class="btn btn-xlarge btn-warning">Everyday</button>
+  <button type="button" id="motd" onclick="set2('MOTD');" class="btn btn-xlarge btn-warning">Most of the Day</button>
 </div>
 </div>
 <div class="container">
@@ -96,10 +96,19 @@
         document.getElementById("wiht").style.visibility = 'hidden';
         document.getElementById("freq").style.visibility = 'hidden';
       }
+      else if(occ=="Artist")
+      {
+        document.getElementById("wiht").style.visibility = 'hidden';
+        document.getElementById("freq").style.visibility = 'hidden';
+        document.getElementById("every").style.visibility = 'hidden';
+        document.getElementById("motd").style.visibility = 'hidden';
+      }
       else
       {
         document.getElementById("wiht").style.visibility = 'visible';
         document.getElementById("freq").style.visibility = 'visible';
+         document.getElementById("every").style.visibility = 'visible';
+        document.getElementById("motd").style.visibility = 'visible';
       }
     }
     function set2(freqi)
@@ -112,7 +121,13 @@
     }
     function submit(){
         
+        if(freq!= null)
+        {
           window.location.href=window.location.href+occ+"/" + freq;
+        }
+        else{
+          window.location.href=window.location.href+occ;
+        }
     }
     </script>
 </body>
