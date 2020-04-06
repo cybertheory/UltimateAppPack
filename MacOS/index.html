@@ -1,0 +1,83 @@
+
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>UAP-The one stop shop for all your downloads</title>
+<style type = "text/css">
+  
+
+
+  .jumbotron{
+    background-image: url('../assets/images/headliner.jpg');
+    background-size: 100% 400px;
+    color: white;
+  }
+  
+
+  </style>
+</head>
+<body>
+<div class="jumbotron">
+    <h1 class="text-center">The Ultimate App Pack</h1>
+    <p class="text-center">Download all of your Best Apps in One Shot</p>
+  </div>
+  <div>
+    <h2 class="text-center"> Who are you?</h2>
+    <h3 class="text-center">We Will Make Sure to Include Apps Specific to You</h3>
+  </div>
+<div class="col-md-2 col-md-offset-5">
+  <div class="form-check">
+  <input class="form-check-input" type="radio" name="OS" id="button" value="Gamer" >
+  <label class="form-check-label" for="Gamer">
+    Gamer
+  </label>
+</div>
+ <div class="form-check">
+  <input class="form-check-input" type="radio" name="OS" id="button" value="eWriter">
+  <label class="form-check-label" for="eWriter">
+    eWriter
+  </label>
+</div>
+ <div class="form-check">
+  <input class="form-check-input" type="radio" name="OS" id="button" value="Musician">
+  <label class="form-check-label" for="Musician">
+    Musician
+  </label>
+</div>
+ <div class="form-check">
+  <input class="form-check-input" type="radio" name="OS" id="button" value="Artist">
+  <label class="form-check-label" for="Artist">
+    Artist
+  </label>
+</div>
+ <div class="form-check">
+  <input class="form-check-input" type="radio" name="OS" id="button" value="Programmer">
+  <label class="form-check-label" for="Programmer">
+    Programmer
+  </label>
+</div>
+    <div class="col-md-1 col-md-offset-11">
+      <button class="btn btn-primary" onclick="submit();">Submit</button>
+    </div>
+</div>
+<script>
+    function submit(){
+    var h=document.getElementsByClassName("form-check-input");
+    for(var i =0; i<h.length; i++)
+    {
+        if(h[i].checked == true)
+        {
+          window.location.replace(window.location.href+h[i].value);
+        }
+    }
+}
+    </script>
+</body>
+</html>

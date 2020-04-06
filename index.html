@@ -2,80 +2,40 @@
 <html>
 <head>
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.7/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<style type = "text/css">
-  
-
-
-	.jumbotron{
-		background-image: url('assets/images/headliner.jpg');
-    background-size: 100% 400px;
-    color: white;
-	}
-  
-
-	</style>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>UAP-The one stop shop for all your downloads</title>
 </head>
-<body>
-<div class="jumbotron">
-    <h1 class="text-center">The Ultimate App Pack</h1>
-    <p class="text-center">Download all of your Best Apps in One Shot</p>
-  </div>
-  <div>
-    <h2 class="text-center"> What Operating System are you Running?</h2>
-  </div>
-<div class="col-md-2 col-md-offset-5">
-  <div class="form-check">
-  <input class="form-check-input" type="radio" name="OS" id="button" value="Windows" >
-  <label class="form-check-label" for="Windows">
-    Microsoft Windows
-  </label>
-</div>
- <div class="form-check">
-  <input class="form-check-input" type="radio" name="OS" id="button" value="MacOS">
-  <label class="form-check-label" for="MacOS">
-    Apple MacOS
-  </label>
-</div>
- <div class="form-check">
-  <input class="form-check-input" type="radio" name="OS" id="button" value="Linux">
-  <label class="form-check-label" for="Linux">
-    Linux
-  </label>
-</div>
- <div class="form-check">
-  <input class="form-check-input" type="radio" name="OS" id="button" value="IOS">
-  <label class="form-check-label" for="IOS">
-    Apple IOS
-  </label>
-</div>
- <div class="form-check">
-  <input class="form-check-input" type="radio" name="OS" id="button" value="Android">
-  <label class="form-check-label" for="Android">
-    Android
-  </label>
-</div>
-    <div class="col-md-1 col-md-offset-11">
-      <button class="btn btn-primary" onclick="submit();">Submit</button>
-    </div>
-</div>
+<body>  
 <script>
-    function submit(){
-    var h=document.getElementsByClassName("form-check-input");
-    for(var i =0; i<h.length; i++)
-    {
-        if(h[i].checked == true)
-        {
-          window.location.replace( "/"+h[i].value);
-        }
-    }
+    function getOS() {
+  var userAgent = window.navigator.userAgent,
+      platform = window.navigator.platform,
+      macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+      windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+      iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+      os = null;
+
+  if (macosPlatforms.indexOf(platform) !== -1) {
+    os = 'MacOS';
+  } else if (iosPlatforms.indexOf(platform) !== -1) {
+    os = 'IOS';
+  } else if (windowsPlatforms.indexOf(platform) !== -1) {
+    os = 'Windows';
+  } else if (/Android/.test(userAgent)) {
+    os = 'Android';
+  } else if (!os && /Linux/.test(platform)) {
+    os = 'Linux';
+  }
+
+  window.location.href=os;
 }
+getOS()
     </script>
 </body>
 </html>

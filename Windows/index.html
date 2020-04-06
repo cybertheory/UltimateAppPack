@@ -1,0 +1,119 @@
+
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>UAP-The one stop shop for all your downloads</title>
+<style type = "text/css">
+
+ .text-centerc{
+  color: white;
+ }
+
+  body, html {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+   }
+
+.bg {
+  /* The image used */
+  background-image: url("../assets/images/headliner.jpg");
+
+  /* Full height */
+  height: 100%;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+  .btn-xlarge {
+    padding: 18px 28px;
+    font-size: 22px; //change this to your desired size
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
+  </style>
+</head>
+<body class="bg">
+<div>
+<a href="../index.html"><h1 class="text-center text-centerc">The Ultimate App Pack</h1></a>
+<h2 class="text-center text-centerc"> Download all your Free Favorite Apps in One Shot </h2>
+<h3 class = "text-center text-centerc" id="hi"> Who Are you? </h3> 
+</div>
+<div class="col-md-8 col-md-offset-2">
+<div class="btn-toolbar">
+  <button type="button" onclick="set('Dev');" class="btn btn-xlarge btn-primary">Developer</button>
+  <button type="button" onclick="set('Gamer');" class="btn btn-xlarge  btn-primary">Gamer</button>
+</div>
+  <div class="btn-toolbar">
+  <button type="button" onclick="set('Ewriter');" class="btn btn-xlarge btn-primary">Ewriter</button>
+  <button type="button" onclick="set('Artist');" class="btn btn-xlarge btn-primary">Artist</button>
+</div>
+<div class="btn-toolbar">
+  <button type="button" onclick="set('PenTester');"  class="btn btn-xlarge btn-primary">PenTester</button>
+  <button type="button" onclick="set('ProdUser');" class="btn btn-xlarge btn-primary">Productive User</button>
+</div>
+</div>
+
+<div class="col-md-8 col-md-offset-2 mt-5" >
+<div class="bg-success" style="width: 47%">
+<h3 class = "text-dark" id="hello"> How often do you use this device? </h3> 
+</div>
+
+
+<div class="btn-toolbar">
+  <button type="button" id="wiht"onclick="set2('WIHT');" class="btn btn-xlarge btn-warning">When I have to</button>
+  <button type="button" id="freq" onclick="set2('Frequent');" class="btn btn-xlarge  btn-warning">Frequent</button>
+</div>
+  <div class="btn-toolbar">
+  <button type="button" onclick="set2('Everyday');" class="btn btn-xlarge btn-warning">Everyday</button>
+  <button type="button" onclick="set2('MOTD');" class="btn btn-xlarge btn-warning">Most of the Day</button>
+</div>
+</div>
+<div class="container">
+<button type="button" onclick = "submit();" class="btn btn-xlarge btn-success">Submit</button>
+</div>
+<script>
+    var occ;
+    var freq;
+    function set(occi)
+    {
+      occ = occi;
+      document.getElementById("hi").innerHTML= "You Are a " + occ;
+      if(occ=="Dev")
+      {
+        document.getElementById("wiht").style.visibility = 'hidden';
+        document.getElementById("freq").style.visibility = 'hidden';
+      }
+      else
+      {
+        document.getElementById("wiht").style.visibility = 'visible';
+        document.getElementById("freq").style.visibility = 'visible';
+      }
+    }
+    function set2(freqi)
+    {
+      if(occ != null)
+      {
+      freq=freqi;
+      document.getElementById("hello").innerHTML= "You use this device: " + freq;
+    }
+    }
+    function submit(){
+        
+          window.location.href=window.location.href+occ+"/" + freq;
+    }
+    </script>
+</body>
+</html>
